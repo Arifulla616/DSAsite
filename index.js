@@ -249,7 +249,7 @@ app.post("/user/:username/thisweek/:que",(req,res)=>{
     if(req.isAuthenticated()){
         var qque = req.params.que;
         if(req.user.username===req.params.username){
-            req.params.que.replaceAll(/%20/g," ");
+            req.params.que.replace(/%20/g," ");
 
             Question.findOne({name:req.params.que},(err,ans)=>{
                 if(err){
