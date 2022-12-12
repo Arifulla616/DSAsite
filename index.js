@@ -228,9 +228,7 @@ app.get("/user/:username/thisweek/:que",(req,res)=>{
                             console.log(err);
                         }
                         else{
-                            ans.comments.forEach((e)=>{
-                                console.log(e);
-                            });
+
                             res.render("thisweek",{user:req.user.username,ques:ansi,q:ans});
                         }
                     });
